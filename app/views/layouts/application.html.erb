@@ -6,10 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
   </head>
 
-  <body>
-  	<p class="notice"><%= notice %></p>
+    
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <%= render :partial => "layouts/navbar" %>
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
