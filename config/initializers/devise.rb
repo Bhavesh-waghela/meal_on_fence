@@ -20,7 +20,8 @@ Devise.setup do |config|
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
 
-  config.omniauth :facebook, '772755333546667', '4162ff819591cdb9b7526e32e1a19c3b', token_params: { parse: :json }
+  config.omniauth :facebook, Rails.application.secrets.FACEBOOK_APP_ID, Rails.application.secrets.FACEBOOK_APP_SECRET, token_params: { parse: :json }
+  config.omniauth :twitter, Rails.application.secrets.TWITTER_APP_ID, Rails.application.secrets.TWITTER_APP_SECRET
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

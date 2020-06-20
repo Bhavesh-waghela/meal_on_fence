@@ -20,6 +20,7 @@ gem 'devise'
 gem 'activeadmin'
 gem "font-awesome-rails"
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'figaro'
 
 group :development, :test do
