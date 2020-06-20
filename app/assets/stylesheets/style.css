@@ -65,6 +65,10 @@ body{
 	height: 320px;
 }
 
+.p10 {
+	padding :10px;
+}
+
 @media screen and (max-width : 1920px){
   .only-mobile{
   visibility:hidden;

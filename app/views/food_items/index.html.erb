@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% @food_items.each do |food_item| %>
-      <div class="col-md-4" data-aos="slide-up">
+      <div class="col-md-4 p10" data-aos="slide-up">
         <div class="card view zoom">
-            <img class="card-img-top img-fluid " src="/assets/menu-carne.jpg">
+            <%= image_tag food_item.avatar.url(:medium), :class => "card-img-top img-fluid " %>
             <div class="card-body">
                 <h5 class="card-title">~ <%= food_item.title %> ~</h5>
                 <ul class="list-group list-group-flush">
@@ -15,9 +15,6 @@
                       <li><%= button_to 'Like', food_item_likes_path(food_item), method: :post %></li>
                     <% end %>
                     <li class="list-group-item"><%= food_item.food_type %></li>
-                    <li class="list-group-item"><%= food_item.food_type %></li>
-                    <li class="list-group-item"><%= food_item.food_type %></li>
-                    <li class="list-group-item"><%= food_item.description %></li>
                     <li class="list-group-item"><%= food_item.description %></li>
                 </ul>
             </div>

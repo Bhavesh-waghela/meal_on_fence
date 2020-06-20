@@ -8,8 +8,8 @@
   <article class="card-body mx-auto" style="max-width: 400px;">
     <h4 class="card-title mt-3 text-center">Sign In Account</h4>
     <p>
-      <button type="submit" class="btn btn-block btn-twitter"> <i class="fa fa-twitter"></i>   Login via Twitter</button>
-      <button type="submit" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-f"></i>   Login via facebook</button>
+      <a href="<%= user_twitter_omniauth_authorize_path %>" class="btn btn-block btn-facebook"><i class="fa fa-twitter"></i> Login via Twitter </a>
+      <a href="<%= user_facebook_omniauth_authorize_path %>" class="btn btn-block btn-facebook"><i class="fa fa-facebook-f"></i> Login via facebook </a>
     </p>
     <p class="divider-text">
       <span class="bg-light">OR</span>

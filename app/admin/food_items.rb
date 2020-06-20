@@ -5,7 +5,7 @@ ActiveAdmin.register FoodItem do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :food_type, :description
+  permit_params :title, :food_type, :description, :avatar
   #
   # or
   #
@@ -14,5 +14,15 @@ ActiveAdmin.register FoodItem do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs "Upload" do
+      f.input :title
+      f.input :food_type
+      f.input :description
+      f.input :avatar, required: true, as: :file
+    end
+    f.actions
+  end
   
 end
