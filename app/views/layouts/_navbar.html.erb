@@ -9,17 +9,26 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Today's meal</a>
+              <a class="nav-link" href="/">Restaurants</a>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Menu</a>
+            <a class="nav-link" href="/">Popular Menu</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%= new_user_registration_path %>">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%= new_user_session_path %>">Sign in</a>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" href="/">All Menu</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "nav-link"  %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_registration_path %>">Sign up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_user_session_path %>">Sign in</a>
+            </li>
+          <% end %>  
         </ul>
     </div>
   </nav>
@@ -34,21 +43,21 @@
         <div class="carousel-item active">
           <img class="d-block w-100 img-fluid img-slider" src="/assets/slider1.jpg" alt="First slide">
           <div class="carousel-caption">
-            <h1>Meal on the Fence!</h1>
+            <h1>Meal on the Fence Observer!</h1>
             <p>...</p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100 img-fluid img-slider" src="/assets/slider2.jpg" alt="Second slide">
           <div class="carousel-caption">
-            <h2>Cucina Tradizionale Italiana</h2>
+            <h2>Daily new cuisines on the list</h2>
             <p>...</p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100 img-fluid img-slider" src="/assets/slider3.jpg" alt="Third slide">
           <div class="carousel-caption">
-            <h2>Prodotti Selezionati</h2>
+            <h2>Choose from various options</h2>
             <p>...</p>
           </div>
         </div>
